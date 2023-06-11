@@ -37,7 +37,6 @@ class CustomerServiceTest {
         Assertions.assertThat(actual).isNotNull
         Assertions.assertThat(actual).isSameAs(fakeCustomer)
         verify(exactly = 1) { customerRepository.save(fakeCustomer) }
-
     }
 
     @Test
@@ -81,6 +80,7 @@ class CustomerServiceTest {
         verify(exactly = 1) { customerRepository.findById(fakeId) }
         verify(exactly = 1) { customerRepository.delete(fakeCustomer) }
     }
+
 
     companion object {
         fun buildCustomer(
